@@ -37,7 +37,8 @@ from sklearn.preprocessing import StandardScaler
 
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
-from sklearn.externals import joblib
+import joblib
+
 df=pd.read_csv('indian_liver_patient.csv')
 ## if score==negative, mark 0 ;else 1 
 def partition(x):

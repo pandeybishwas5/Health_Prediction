@@ -50,7 +50,7 @@ print ("Total number of diagnosis are ", str(df.shape[0]), ", ", df.Class.value_
 featureMeans = list(df.columns[0:9])
 print(featureMeans)
 
-sns.heatmap(data.df.corr())
+sns.heatmap(df.corr())
 '''
 
 for i in range(len(featureMeans)):

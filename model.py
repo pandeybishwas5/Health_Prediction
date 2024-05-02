@@ -17,17 +17,17 @@ feature_columns = ['num_preg', 'glucose_conc', 'diastolic_bp', 'insulin', 'bmi',
 predicted_class = ['diabetes']
 
 X = dataset[feature_columns].values
-y = dataset[predicted_class].values
+y = dataset[predicted_class].values.ravel()  # Reshape y to a 1D array
 
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state=10)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=10)
 
 
 from sklearn.neighbors import KNeighborsClassifier
 
 training_accuracy = []
 test_accuracy = []
-#try n_neighbors from 1 to 10
+# try n_neighbors from 1 to 10
 neighbors_settings = range(1, 11)
 
 for n_neighbors in neighbors_settings:
@@ -47,16 +47,16 @@ plt.legend()
 plt.savefig('knn_compare_model')
 
 
-
 from sklearn.linear_model import LogisticRegression
-logreg = LogisticRegression(C=1).fit(X_train, y_train)
+logreg = LogisticRegression(C=1, max_iter=1000)  # Increase max_iter to avoid convergence warning
+logreg.fit(X_train, y_train)
 print("Training set score: {:.3f}".format(logreg.score(X_train, y_train)))
 print("Test set score: {:.3f}".format(logreg.score(X_test, y_test)))
 
 
-from sklearn.preprocessing import Imputer
+from sklearn.impute import SimpleImputer  # Change import statement
 
-fill_values = Imputer(missing_values=0, strategy="mean", axis=0)
+fill_values = SimpleImputer(missing_values=0, strategy="mean")  # Use SimpleImputer instead of Imputer
 
 X_train = fill_values.fit_transform(X_train)
 X_test = fill_values.fit_transform(X_test)
@@ -77,47 +77,43 @@ from sklearn.tree import DecisionTreeClassifier
 tree = DecisionTreeClassifier(max_depth=3, random_state=0)
 tree.fit(X_train, y_train)
 def plot_feature_importances_diabetes(model):
-    diabetes_features = [x for i,x in enumerate(dataset.columns) if i!=8]
+    diabetes_features = [x for i, x in enumerate(feature_columns)]  # Use feature_columns instead of dataset.columns
     
-    plt.figure(figsize=(8,6))
-    n_features = 8
+    plt.figure(figsize=(8, 6))
+    n_features = len(diabetes_features)  # Get the length of diabetes_features
     plt.barh(range(n_features), model.feature_importances_, align='center')
     plt.yticks(np.arange(n_features), diabetes_features)
     plt.xlabel("Feature importance")
     plt.ylabel("Feature")
     plt.ylim(-1, n_features)
+
 plot_feature_importances_diabetes(tree)
 plot_feature_importances_diabetes(rf)
 plt.savefig('feature_importance')
 
+
 # Saving model to disk
-pickle.dump(rf1, open('model.pkl','wb'))
+pickle.dump(rf1, open('model.pkl', 'wb'))
 
 # Loading model to compare the results
-model = pickle.load(open('model.pkl','rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 print(model.predict([[4, 154, 72, 126, 31, .338, 37, 1.15]]))
 
 
-dataset.hist(figsize=(8,10), bins=10) ## Display the labels rotated by 45 degress
+dataset.hist(figsize=(8, 10), bins=10)  # Display the labels rotated by 45 degrees
 fig, ax = plt.subplots()
-#s.plot.bar()
+# s.plot.bar()
 fig.savefig('relationDiabetes1.png')
-namee=os.getcwd()+"/static/images/"+"relationDiabetes1.png"
+namee = os.getcwd() + "/static/images/" + "relationDiabetes1.png"
 print(namee)
 
 
 import seaborn as sns
 import matplotlib.pyplot as plt
-#get correlations of each features in dataset
+# get correlations of each features in dataset
 corrmat = dataset.corr()
 top_corr_features = corrmat.index
-plt.figure(figsize=(8,6))
-#plot heat map
-g=sns.heatmap(dataset[top_corr_features].corr(),annot=True)
-
-
-
-'''sns.countplot(x = 'diabetes',data = dataset)
-namee=os.getcwd()+"/static/images/"+"outcomeDiabetes.png"
-print(namee)'''
+plt.figure(figsize=(8, 6))
+# plot heat map
+g = sns.heatmap(dataset[top_corr_features].corr(), annot=True)
 
