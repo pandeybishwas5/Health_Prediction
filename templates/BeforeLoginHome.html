@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HealthDiagnosis</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  </head>
+  <body>
+  {% extends "temp.html" %}
+  {% block content %}
+   <div class="hero-wrap" style=" background-image: url('static/images/bg_1.jpg'); background-attachment:fixed;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-8 ftco-animate text-center">
+            <h1 class="mb-4">The most valuable thing is your Health</h1>
+            <p>Health is the crown on the well person’s head that only the ill person can see.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-services">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-4 ftco-animate py-5 nav-link-wrap fadeInUp ftco-animated">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><span class="mr-3 flaticon-cardiogram"></span> Heart Disease</a>
+
+              <a class="nav-link px-4" id="v-pills-buffet-tab" data-toggle="pill" href="#v-pills-buffet" role="tab" aria-controls="v-pills-buffet" aria-selected="false"><img alt= "image" src= "static/images/liver.png" height="20px" width="25px" style="opacity:0.6"></img> <span class="mr-3"></span> Liver Disease</a>
+
+              <a class="nav-link px-4" id="v-pills-fitness-tab" data-toggle="pill" href="#v-pills-fitness" role="tab" aria-controls="v-pills-fitness" aria-selected="false"> <span class="mr-3 flaticon-stethoscope"></span> Diabetes</a>
+
+              <a class="nav-link px-4" id="v-pills-sea-tab" data-toggle="pill" href="#v-pills-sea" role="tab" aria-controls="v-pills-sea" aria-selected="false"><img alt= "image" src= "static/images/cancer.png" height="20px" width="25px" style="opacity:0.6"></img> <span class="mr-3"></span> Breast Cancer</a>
+
+            </div>
+          </div>
+          <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
+            
+            <div class="tab-content pl-md-5" id="v-pills-tabContent">
+
+              <div class="tab-pane fade show active py-5" id="v-pills-master" role="tabpanel" aria-labelledby="v-pills-master-tab">
+                <span class="icon mb-3 d-block flaticon-cardiogram"></span>
+                <h2 class="mb-4">Heart Disease</h2>
+                <p>Heart disease generally refers to conditions that involve narrowed or blocked blood vessels that can lead to a heart attack, chest pain (angina) or stroke. Other heart conditions, such as those that affect your heart's muscle, valves or rhythm, also are considered forms of heart disease.</p>
+              </div>
+
+              <div class="tab-pane fade py-5" id="v-pills-buffet" role="tabpanel" aria-labelledby="v-pills-buffet-tab">
+                 <img alt= "image" src= "static/images/liver.png" height="65px" width="65px"> <span class="icon mb-3 d-block"></span>
+                <h2 class="mb-4">Liver Disease</h2>
+                <p>Patients with liver disease have been continuously increasing because of excessive consumption of alcohol, inhale of harmful gases, intake of contaminated food, pickles and drugs.</p>
+              </div>
+
+              <div class="tab-pane fade py-5" id="v-pills-fitness" role="tabpanel" aria-labelledby="v-pills-fitness-tab">
+                <span class="icon mb-3 d-block flaticon-stethoscope"></span>
+                <h2 class="mb-4">Diabetes</h2>
+                <p>Diabetes is a chronic disease or group of metabolic diseases where a person suffers from an extended level of bloodglucose in the body, which is either the insulin production is inadequate, or because the body’s cells do not respond properly to insulin.</p>
+              </div>
+
+              <div class="tab-pane fade py-5" id="v-pills-sea" role="tabpanel" aria-labelledby="v-pills-sea-tab">
+                 <img alt= "image" src= "static/images/cancer.png" height="60px" width="65px"></img> <span class="icon mb-3 d-block"></span>
+                <h2 class="mb-4">Breast Cancer</h2>
+                <p>Breast cancer (BC) is one of the most common cancers among women worldwide, representing the majority of new cancer cases and cancer-related deaths according to global statistics, making it a significant public health problem in today’s society.</p>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section-2 img" style="background-image: url(static/images/bg_3.jpg);">
+    	<div class="container">
+    		<div class="row d-md-flex justify-content-end">
+    			<div class="col-md-6">
+    				<div class="row">
+    					<div class="col-md-12">
+    						<a class="services-wrap ftco-animate">
+    							<div class="icon d-flex justify-content-center align-items-center">
+    								<span class="ion-ios-arrow-back"></span>
+    								<span class="ion-ios-arrow-forward"></span>
+    							</div>
+    							<h2>Heart disease symptoms</h2>
+    							<p>Chest pain, chest tightness, chest pressure, chest discomfort, Shortness of breath, Pain in the neck, jaw, upper abdomen or back</p>
+    						</a>
+    						<a class="services-wrap ftco-animate">
+    							<div class="icon d-flex justify-content-center align-items-center">
+    								<span class="ion-ios-arrow-back"></span>
+    								<span class="ion-ios-arrow-forward"></span>
+    							</div>
+    							<h2>Liver disease symptoms</h2>
+    							<p>Abdominal pain, swelling in the legs and ankles, itchy skin, dark urine color, chronic fatigue, nausea or vomiting, loss of appetite</p>
+    						</a>
+    						<a class="services-wrap ftco-animate">
+    							<div class="icon d-flex justify-content-center align-items-center">
+    								<span class="ion-ios-arrow-back"></span>
+    								<span class="ion-ios-arrow-forward"></span>
+    							</div>
+    							<h2>Diabetes symptoms</h2>
+    							<p>Urinating often, feeling very thirsty, feeling very hungry, extreme fatigue, blurry vision, tingling or numbness in the hands, cuts/bruises that are slow to heal</p>
+    						</a>
+    						<a class="services-wrap ftco-animate">
+    							<div class="icon d-flex justify-content-center align-items-center">
+    								<span class="ion-ios-arrow-back"></span>
+    								<span class="ion-ios-arrow-forward"></span>
+    							</div>
+    							<h2>Breast cancer symptoms</h2>
+    							<p>Irritated or itchy breasts, change in breast color, increase in breast size or shape (over a short period of time), changes in touch (may feel hard, tender or warm), peeling or flaking of the nipple skin, breast lump or thickening, redness or pitting of the breast skin</p>
+    						</a>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">Classifiers Used for Prediction</h2>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-md-6 col-lg-3 ftco-animate">
+	          <div class="block-2">
+	            <div class="flipper">
+	              <div class="front" style="background-image: url(static/images/classi1.jpg);">
+	                <div class="box">
+	                  <h2>K-Nearest Neignbours</h2>
+	                </div>
+	              </div>
+	              <div class="back">
+	                <!-- back content -->
+	                <blockquote>
+	                  <p>The k-nearest neighbours (KNN) algorithm is a simple, easy-to-implement supervised machine learning algorithm that can be used to solve both classification and regression problems.</p>
+	                </blockquote>
+	                <div class="author d-flex">
+	                  <div class="image mr-3 align-self-center">
+	                    <div class="img" style="background-image: url(static/images/classi1.jpg);"></div>
+	                  </div>
+	                  <div class="name align-self-center">K-Nearest Neignbours <span class="position"></span></div>
+	                </div>
+	              </div>
+	            </div>
+	          </div> <!-- .flip-container -->
+	        </div>
+	        <div class="col-md-6 col-lg-3 ftco-animate">
+	          <div class="block-2">
+	            <div class="flipper">
+	              <div class="front" style="background-image: url(static/images/clas2.jpg);">
+	                <div class="box">
+	                  <h2>Random Forest</h2>
+	                </div>
+	              </div>
+	              <div class="back">
+	                <!-- back content -->
+	                <blockquote>
+	                  <p>A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.</p>
+	                </blockquote>
+	                <div class="author d-flex">
+	                  <div class="image mr-3 align-self-center">
+	                    <div class="img" style="background-image: url(static/images/clas2.jpg);"></div>
+	                  </div>
+	                  <div class="name align-self-center">Random Forest <span class="position"></span></div>
+	                </div>
+	              </div>
+	            </div>
+	          </div> <!-- .flip-container -->
+	        </div>
+	        <div class="col-md-6 col-lg-3 ftco-animate">
+	          <div class="block-2">
+	            <div class="flipper">
+	              <div class="front" style="background-image: url(static/images/c3.jpg);">
+	                <div class="box">
+	                  <h2>Support Vector Machine</h2>
+	                </div>
+	              </div>
+	              <div class="back">
+	                <!-- back content -->
+	                <blockquote>
+	                  <p>It is a discriminative classifier formally defined by a separating hyperplane. In other words, given labelled training data, the algorithm outputs an optimal hyperplane which categorizes new examples.</p>
+	                </blockquote>
+	                <div class="author d-flex">
+	                  <div class="image mr-3 align-self-center">
+	                    <div class="img" style="background-image: url(static/images/c3.jpg);"></div>
+	                  </div>
+	                  <div class="name align-self-center">SVM<span class="position"></span></div>
+	                </div>
+	              </div>
+	            </div>
+	          </div> <!-- .flip-container -->
+	        </div>
+	        <div class="col-md-6 col-lg-3 ftco-animate">
+	          <div class="block-2">
+	            <div class="flipper">
+	              <div class="front" style="background-image: url(static/images/e.jpg);">
+	                <div class="box">
+	                  <h2>Logistic Regression</h2>
+	                </div>
+	              </div>
+	              <div class="back">
+	                <!-- back content -->
+	                <blockquote>
+	                  <p> It is basically a supervised classification algorithm. In a classification problem, the target variable (or output), y, can take only discrete values for given set of features (or inputs), X.</p>
+	                </blockquote>
+	                <div class="author d-flex">
+	                  <div class="image mr-3 align-self-center">
+	                    <div class="img" style="background-image: url(static/images/e.jpg);"></div>
+	                  </div>
+	                  <div class="name align-self-center">Logistic Regression <span class="position"></span></div>
+	                </div>
+	              </div>
+	            </div>
+	          </div> <!-- .flip-container -->
+	        </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="block-2">
+              <div class="flipper">
+                <div class="front" style="background-image: url(static/images/k.jpg);">
+                  <div class="box">
+                    <h2>XGBoost</h2>
+                  </div>
+                </div>
+                <div class="back">
+                  <!-- back content -->
+                  <blockquote>
+                    <p>It is a scalable and accurate implementation of gradient boosting machines and it has proven to push the limits of computing power for boosted trees algorithms as it was developed for the purpose of and computational speed.</p>
+                  </blockquote>
+                  <div class="author d-flex">
+                    <div class="image mr-3 align-self-center">
+                      <div class="img" style="background-image: url(static/images/k.jpg);"></div>
+                    </div>
+                    <div class="name align-self-center">XGBoost <span class="position"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- .flip-container -->
+          </div>
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="block-2">
+              <div class="flipper">
+                <div class="front" style="background-image: url(static/images/classiffff6.jpg);">
+                  <div class="box">
+                    <h2>Decision Tree</h2>
+                  </div>
+                </div>
+                <div class="back">
+                  <!-- back content -->
+                  <blockquote>
+                    <p>Decision tree algorithm falls under the category of supervised learning. It uses the tree representation to solve the problem in which each leaf node corresponds to a class label and attributes are represented on the internal node of the tree.</p>
+                  </blockquote>
+                  <div class="author d-flex">
+                    <div class="image mr-3 align-self-center">
+                      <div class="img" style="background-image: url(static/images/classiffff6.jpg);"></div>
+                    </div>
+                    <div class="name align-self-center">Decision Tree <span class="position"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- .flip-container -->
+          </div>
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="block-2">
+              <div class="flipper">
+                <div class="front" style="background-image: url(static/images/clas7.jpg);">
+                  <div class="box">
+                    <h2>Linear Regression</h2>
+                  </div>
+                </div>
+                <div class="back">
+                  <!-- back content -->
+                  <blockquote>
+                    <p>Regression models a target prediction value based on independent variables. ... Linear regression performs the task to predict a dependent variable value (y) based on a given independent variable (x).</p>
+                  </blockquote>
+                  <div class="author d-flex">
+                    <div class="image mr-3 align-self-center">
+                      <div class="img" style="background-image: url(static/images/clas7.jpg);"></div>
+                    </div>
+                    <div class="name align-self-center">Linear Regression <span class="position"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- .flip-container -->
+          </div>
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="block-2">
+              <div class="flipper">
+                <div class="front" style="background-image: url(static/images/p1.jpg);">
+                  <div class="box">
+                    <h2>Naive Bayes</h2>
+                  </div>
+                </div>
+                <div class="back">
+                  <!-- back content -->
+                  <blockquote>
+                    <p>Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature.</p>
+                  </blockquote>
+                  <div class="author d-flex">
+                    <div class="image mr-3 align-self-center">
+                      <div class="img" style="background-image: url(static/images/doctor-4.jpg);"></div>
+                    </div>
+                    <div class="name align-self-center">Naive Bayes <span class="position"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- .flip-container -->
+          </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(static/images/bg_4.jpg);">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+            <h2 class="mb-4">Facts from World Health Organisation</h2>
+           </div>
+        </div>
+    		<div class="row justify-content-center">
+    			<div class="col-md-10">
+		    		<div class="row">
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="1">0</strong>
+		                <span>The number of people with diabetes has risen from 108 million in 1980 to 422 million in 2014.</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="2">0</strong>
+		                <span>Symptoms of liver diseases include weakness and fatigue, weight loss, nausea, vomiting, and yellow discoloration of the skin (jaundice).</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="3">0</strong>
+		                <span> Quit smoking to control risk of many diseases, including breast cancer. Younger women who smoke have a higher risk of breast cancer than their nonsmoking peers.</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="4">0</strong>
+		                <span>Cardiovascular diseases are the number 1 cause of death globally: more people die annually from CVDs than from any other cause.</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+		
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(static/images/bg_5.jpg);">
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">HealthDiagnosis</h2>
+              <p>Healing is a matter of time, but it is sometimes also a matter of opportunity.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Site Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{{ url_for('index') }}" class="py-2 d-block">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="py-2 d-block">About</a></li>
+                <li><a href="{{ url_for('departments') }}" class="py-2 d-block">Departments</a></li>
+                <li><a href="{{ url_for('chart') }}" class="py-2 d-block">Analytics</a></li>
+                <li><a href="{{ url_for('contact') }}" class="py-2 d-block">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info.HealthDiagnosis.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | HealthDiagnosis <i class="icon-heart" aria-hidden="true"></i>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <script src="static/js/jquery.waypoints.min.js"></script>
+  <script src="static/js/jquery.stellar.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+  <script src="static/js/jquery.magnific-popup.min.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="static/js/jquery.animateNumber.min.js"></script>
+  <script src="static/js/bootstrap-datepicker.js"></script>
+  <script src="static/js/jquery.timepicker.min.js"></script>
+  <script src="static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="static/js/google-map.js"></script>
+  <script src="static/js/main.js"></script>
+    
+    {% endblock %}
+  </body>
+</html>

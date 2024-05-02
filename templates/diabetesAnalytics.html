@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HealthDiagnosis : Heart Disease Prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  </head>
+  <body>
+    {% extends "template.html" %}
+  {% block content %}
+
+   
+    <div class="hero-wrap" style="background-image: url('static/images/bg_6.jpg'); background-attachment:fixed;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-8 ftco-animate text-center">
+            <p class="breadcrumbs"><span class="mr-2"><a href="{{ url_for('index') }}">Home</a></span> <span class="mr-2"><a href="departments.html">Heart Disease</a></span> <span>Department Single</span></p>
+            <h1 class="mb-3 bread">Diabetes Prediction Analytics</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+
+
+
+
+ <section class="ftco-services">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-4 ftco-animate py-5 nav-link-wrap fadeInUp ftco-animated">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><img alt= "image" src= "static/images/hi.png" height="35px" width="30px" style="opacity:0.6"></img> <span class="mr-3"></span>Histogram</a>
+              <a class="nav-link px-4" id="v-pills-fitness-tab" data-toggle="pill" href="#v-pills-fitness" role="tab" aria-controls="v-pills-fitness" aria-selected="false"> <img alt= "image" src= "static/images/heatmap.png" height="35px" width="35px" ></img> <span class="mr-3"></span>Heat Map</a>
+              <a class="nav-link px-4" id="v-pills-buffet-tab" data-toggle="pill" href="#v-pills-buffet" role="tab" aria-controls="v-pills-buffet" aria-selected="false"><img alt= "image" src= "static/images/data.png" height="30px" width="35px"></img> <span class="mr-3"></span>Model Accuracy</a>
+            </div>
+          </div>
+          <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
+           
+            <div class="tab-content pl-md-5" id="v-pills-tabContent">
+
+              <div class="tab-pane fade show active py-5" id="v-pills-master" role="tabpanel" aria-labelledby="v-pills-master-tab">
+                <center><img alt= "image" src= "static/images/hi.png" height="65px" width="65px"> <span class="icon mb-3 d-block"></span>
+                <h2 class="mb-4">Histogram</h2>
+                <img src="static/images/histogramsDiabetes.png"></center>
+              </div>
+
+            <div class="tab-pane fade py-5" id="v-pills-buffet" role="tabpanel" aria-labelledby="v-pills-buffet-tab">
+                 <center><img alt= "image" src= "static/images/data.png" height="75px" width="80px"> <span class="icon mb-3 d-block"></span>
+                 <h2 class="mb-4">Model Accuracy</h2>
+                 <img src="static/images/diabaccuracy.png" style="width:550px;height:350px;"></center>
+              </div>
+              <div class="tab-pane fade py-5" id="v-pills-fitness" role="tabpanel" aria-labelledby="v-pills-fitness-tab">
+              <center> <img alt= "image" src= "static/images/heatmap.png" height="105px" width="100px"></img> <span class="icon mb-3 d-block"></span>
+                <h2 class="mb-4">Heat Map</h2>
+                <img src="static/images/diabetesHeatMap.png"></center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+   
+<section class="ftco-section"  >
+    
+    <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">FEATURE IMPORTANCE</h2>
+          </div>
+        </div>
+<div class="w3-card-4" style="width:100%">
+    <div class="w3-container">
+    <br>
+      <p><font color="black">Feature importance rates how important each feature is for the decision a tree makes. It is a number between 0 and 1 for each feature, where 0 means “not used at all” and 1 means “perfectly predicts the target.” The feature importances always sum to 1</p>
+      </p>
+     
+      <center>
+      <div class="w3-container">
+      <div class="w3-card-4" style="width:99%">
+      <h4>Decision Tree</h4>
+       <img src="static/images/diabetesDtImportance.png">
+      <br><br>
+       <p>Feature "Glucose" is by far the most important feature.</p>
+  </div>
+  </div>
+   <div class="w3-container">
+      <div class="w3-card-4" style="width:99%">
+      <h4>Random Forest</h4>
+       <img src="static/images/diabetesRfImportance.png">
+      <br><br>
+       <p>Similarly to the single decision tree, the random forest also gives a lot of importance to the “Glucose” feature, but it also chooses “BMI” to be the 2nd most informative feature overall.</p>
+  </div>
+  </div>
+  </center>
+  <br>
+</div>
+</div>
+   </div>
+                </div>
+        </div>
+    <br><br>
+    <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">DATASET OUTCOME ANALYSIS</h2>
+          </div>
+        </div>
+<div class="w3-card-4" style="width:100%">
+    <div class="w3-container">
+   
+     
+     <center>
+      <div class="w3-container">
+      <br>
+      <div class="w3-card-4" style="width:99%">
+     
+     <p><font color="black">Outcome 0 means No diabetes, outcome 1 means diabetes. Out of these 768 data points, 500 are labeled as 0 and 268 as 1</p>
+      <hr>
+      <center><img src="static/images/outcomeDiabetes.png"></center></div>
+  </div>
+   
+  </center>
+  <br>
+</div>
+</div>
+   </div>
+                </div>
+        </div>
+    
+    </section>
+ 
+   
+    <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(static/images/bg_5.jpg);">
+    <div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">HealthDiagnosis</h2>
+              <p>Healing is a matter of time, but it is sometimes also a matter of opportunity.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Site Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{{ url_for('index') }}" class="py-2 d-block">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="py-2 d-block">About</a></li>
+                <li><a href="{{ url_for('departments') }}" class="py-2 d-block">Departments</a></li>
+                <li><a href="{{ url_for('chart') }}" class="py-2 d-block">Analytics</a></li>
+                <li><a href="{{ url_for('contact') }}" class="py-2 d-block">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Have a Questions?</h2>
+            <div class="block-23 mb-3">
+             <ul>
+               <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+               <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info.HealthDiagnosis.com</span></a></li>
+             </ul>
+           </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | HealthDiagnosis <i class="icon-heart" aria-hidden="true"></i>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+   
+   
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <script src="static/js/jquery.waypoints.min.js"></script>
+  <script src="static/js/jquery.stellar.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+  <script src="static/js/jquery.magnific-popup.min.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="static/js/jquery.animateNumber.min.js"></script>
+  <script src="static/js/bootstrap-datepicker.js"></script>
+  <script src="static/js/jquery.timepicker.min.js"></script>
+  <script src="static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="static/js/google-map.js"></script>
+  <script src="static/js/main.js"></script>
+ 
+  {% endblock %}
+   
+  </body>
+</html>

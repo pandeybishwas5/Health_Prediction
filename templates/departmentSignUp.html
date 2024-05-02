@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HealthDiagonsis : Department</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+   <link rel="stylesheet" href="static/fonts/linearicons/styleLog.css">
+
+<link rel="stylesheet" href="static/css/styleLog.css">
+        
+
+  </head>
+  <body>
+     {% extends "template.html" %}
+  {% block content %}
+  
+  
+<section>
+<div class="wrapper">
+			<div class="inner">
+				<img src="static/images/image-1.png" alt="" class="image-1">
+				  {% if msg %}
+            <h6 style="color:red">{{ msg }}<h6>
+            {% endif %}
+				<form action="/departmentSignUp" method="post">
+					<h3>Member Signup</h3>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="number" class="form-control" placeholder="User Id" name="userid" required>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Username" name="username" required>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-phone-handset"></span>
+						<input type="number" class="form-control" placeholder="Phone Number" name="contact" required>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						<input type="email" class="form-control" placeholder="Mail" name="email">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Password" name="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Confirm Password" name="password_two" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required>
+					</div>
+					 <div class="form-holder">
+              <center><input class= "btn btn-primary py-2 px-5" type="submit" value="Signup" class="form-control"></center>
+					</div>
+              
+					<center><h6>Already have an Account? &nbsp &nbsp<a href="/departments">Login<h6></center>
+				</form>
+				<img src="static/images/image-2.png" alt="" class="image-2">
+			</div>
+			
+		</div>
+		
+		<script src="static/js/jquery-3.3.1.min.js"></script>
+		<script src="static/js/main.js"></script>
+    </section>
+    <br>
+
+  <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(static/images/bg_5.jpg);">
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">HealthDiagnosis</h2>
+              <p>Healing is a matter of time, but it is sometimes also a matter of opportunity.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Site Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{{ url_for('index') }}" class="py-2 d-block">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="py-2 d-block">About</a></li>
+                <li><a href="{{ url_for('departments') }}" class="py-2 d-block">Departments</a></li>
+                <li><a href="{{ url_for('chart') }}" class="py-2 d-block">Analytics</a></li>
+                <li><a href="{{ url_for('contact') }}" class="py-2 d-block">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info.HealthDiagnosis.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | HealthDiagnosis <i class="icon-heart" aria-hidden="true"></i>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <script src="static/js/jquery.waypoints.min.js"></script>
+  <script src="static/js/jquery.stellar.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+  <script src="static/js/jquery.magnific-popup.min.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="static/js/jquery.animateNumber.min.js"></script>
+  <script src="static/js/bootstrap-datepicker.js"></script>
+  <script src="static/js/jquery.timepicker.min.js"></script>
+  <script src="static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="static/js/google-map.js"></script>
+  <script src="static/js/main.js"></script>
+     
+     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-db44b196776521ea816683afab021f757616c80860d31da6232dedb8d7cc4862.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script id="rendered-js">
+$(document).ready(function () {
+  $(".container").fadeIn(1000);
+  $(".s2class").css({ "color": "#EE9BA3" });
+  $(".s1class").css({ "color": "#748194" });
+  $("#left").removeClass("left_hover");
+  $("#right").addClass("right_hover");
+  $(".signin").css({ "display": "none" });
+  $(".signup").css({ "display": "" });
+});
+$("#right").click(function () {
+  $("#left").removeClass("left_hover");
+  $(".s2class").css({ "color": "#EE9BA3" });
+  $(".s1class").css({ "color": "#748194" });
+  $("#right").addClass("right_hover");
+  $(".signin").css({ "display": "none" });
+  $(".signup").css({ "display": "" });
+});
+$("#left").click(function () {
+  $(".s1class").css({ "color": "#EE9BA3" });
+  $(".s2class").css({ "color": "#748194" });
+  $("#right").removeClass("right_hover");
+  $("#left").addClass("left_hover");
+  $(".signup").css({ "display": "none" });
+  $(".signin").css({ "display": "" });
+});
+//# sourceURL=pen.js
+<script>
+$('.toggle-password').on('click', function() {
+  $(this).toggleClass('fa-eye fa-eye-slash');
+  let input = $($(this).attr('toggle'));
+  if (input.attr('type') == 'password') {
+    input.attr('type', 'text');
+  }
+  else {
+    input.attr('type', 'password');
+  }
+});
+    </script>
+    
+  {% endblock %}
+  </body>
+</html>

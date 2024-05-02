@@ -1,0 +1,8 @@
+FROM python
+COPY ./requirements.txt /app/requirement.txt
+WORKDIR /app
+RUN pip install --upgrade pip
+Run pip install -r requirements.txt
+COPY . /app
+ENTRYPOINT ["python"]
+CMD [ app.py ]

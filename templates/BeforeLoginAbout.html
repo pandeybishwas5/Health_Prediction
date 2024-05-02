@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HealthDiagonsis : About</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+  </head>
+  <body>
+    
+{% extends "temp.html" %}
+    {% block content %}
+    <!-- END nav -->
+    
+    <div class="hero-wrap" style="background-image: url('static/images/bg_6.jpg'); background-attachment:fixed;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-8 ftco-animate text-center">
+            <p class="breadcrumbs"><span class="mr-2"><a href="{{ url_for('index') }}">Home</a></span> <span>About</span></p>
+            <h1 class="mb-3 bread">About Us</h1>
+            <p>The application furnishes sophisticated machine learning algorithms to enable prediction of whether the person is infected or not with Diabetes, Breast Cancer, Liver Disease or Heart Disease.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-services">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-4 ftco-animate py-5 nav-link-wrap fadeInUp ftco-animated">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><img alt= "image" src= "static/images/scope2.png" height="30px" width="30px" style="opacity:0.6"></img><span class="mr-3"></span> Scope</a>
+
+              <a class="nav-link px-4" id="v-pills-buffet-tab" data-toggle="pill" href="#v-pills-buffet" role="tab" aria-controls="v-pills-buffet" aria-selected="false"><img alt= "image" src= "static/images/target.png" height="30px" width="30px" style="opacity:0.6"></img> <span class="mr-3"></span> Purpose</a>
+
+              <a class="nav-link px-4" id="v-pills-fitness-tab" data-toggle="pill" href="#v-pills-fitness" role="tab" aria-controls="v-pills-fitness" aria-selected="false"> <img alt= "image" src= "static/images/goal1.png" height="30px" width="30px" style="opacity:0.6"></img> <span class="mr-3"></span> Aims</a>
+
+              <a class="nav-link px-4" id="v-pills-sea-tab" data-toggle="pill" href="#v-pills-sea" role="tab" aria-controls="v-pills-sea" aria-selected="false"><img alt= "image" src= "static/images/user.png" height="25px" width="25px" style="opacity:0.6"></img> <span class="mr-3"></span> Intended Users</a>
+
+            </div>
+          </div>
+          <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
+            
+            <div class="tab-content pl-md-5" id="v-pills-tabContent">
+
+              <div class="tab-pane fade show active py-5" id="v-pills-master" role="tabpanel" aria-labelledby="v-pills-master-tab">
+                <img alt= "image" src= "static/images/scope2.png" height="70px" width="70px" style="opacity:0.6"></img>
+                <span class="icon mb-3 d-block"></span>
+                <h2 class="mb-4">Scope</h2>
+                <p>The project can be employed in the health-care industry for automated diagnosis. ML is capable of more accurately detecting a disease at an earlier stage, helping to reduce the number of readmissions in hospitals and clinics. The automation will reduce the great cost incurred in medical tests, relieving the underprivileged of the society. Moreover, automation of the diagnosis process enables accurate diagnosis of the disease and hence hold the promise of delivering reliable health-care to resource-scarce areas.</p>
+              </div>
+
+              <div class="tab-pane fade py-5" id="v-pills-buffet" role="tabpanel" aria-labelledby="v-pills-buffet-tab">
+                 <img alt= "image" src= "static/images/target.png" height="70px" width="70px"></img> <span class="icon mb-3 d-block"></span>
+                <h2 class="mb-4">Purpose</h2>
+                <p>Automation of the diagnosis process by using machine learning modelling tools and techniques, enable accurate diagnosis of the disease and hence hold the promise of delivering reliable health-care to resource-scarce areas. The purpose of the project is to provide exploratory analysis of how different features affect the chances of being infected by life ceasing diseases such as breast cancer, PIMA diabetes, liver disease and heart diseases. Furthermore, the project furnishes sophisticated machine learning algorithms to enable prediction of whether the person is infected or not with the above-mentioned diseases.</p>
+              </div>
+
+              <div class="tab-pane fade py-5" id="v-pills-fitness" role="tabpanel" aria-labelledby="v-pills-fitness-tab">
+                 <img alt= "image" src= "static/images/goal1.png" height="70px" width="70px"></img>
+                <span class="icon mb-3 d-block"></span>
+                <h2 class="mb-4">Aims</h2>
+                <p><b>Aim 1: PIMA Diabetes Prediction</b><br>Diabetes is a chronic disease or group of metabolic diseases where a person suffers from an extended level of blood glucose in the body, which is either the insulin production is inadequate, or because the body’s cells do not respond properly to insulin. The objective is to make use of significant features, design a prediction algorithm using Machine learning and find the optimal classifier to give the closest result comparing to clinical outcomes. <br><br>
+                <b>Aim 2: Heart Disease Prediction</b><br>A study shows that from 1990 to 2016 the death rate due to heart diseases have increased around 34 per cent from 155.7 to 209.1 deaths per one lakh population in India. Thus, preventing Heart diseases has become more than necessary. Good data-driven systems for predicting heart diseases can improve the entire research and prevention process, making sure that more people can live healthy lives.<br><br>
+                <b>Aim 3: Liver Disease Prediction</b><br>Patients with liver disease have been continuously increasing because of excessive consumption of alcohol, inhale of harmful gases, intake of contaminated food, pickles and drugs. Thus, correct and early diagnosis is necessary to prevent the damage and to reduce the burden on doctors. The objective is to evaluate prediction algorithms in an effort to determine which patients have liver disease and which ones do not.<br><br>
+                <b>Aim 4: Breast Cancer Prediction</b><br>Breast cancer (BC) is one of the most common cancers among women worldwide, representing the majority of new cancer cases and cancer-related deaths according to global statistics, making it a significant public health problem in today’s society. Accurate classification of benign tumours can prevent patients undergoing unnecessary treatments. Thus, the correct diagnosis of BC and classification of patients into malignant or benign groups is the subject of much research.</p>
+              </div>
+
+              <div class="tab-pane fade py-5" id="v-pills-sea" role="tabpanel" aria-labelledby="v-pills-sea-tab">
+                 <img alt= "image" src= "static/images/user.png" height="70px" width="70px"></img> <span class="icon mb-3 d-block"></span>
+                <h2 class="mb-4">Intended users</h2>
+                <p>Hospitals, clinics and other healthcare organizations all around the world are working with software companies to develop administrative systems that are growingly digitized and automated. More importantly, scientists and researchers are using ML to churn out a number of smart solutions that can ultimately help in diagnosing and treating an illness. Patients are set to benefit the most as the technology can improve their outcome by analysing timely and the best forms of treatment for them. Moreover, it will help the hospital system identify patients with chronic diseases that are undiagnosed or misdiagnosed, predict the possibility that patients will develop chronic diseases, and present patient-specific preventive interventions.</p>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section testimony-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">Machine Learning Process</h2>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-md-12 ftco-animate">
+            <div class="carousel-testimony owl-carousel">
+              <div class="item">
+                <div class="testimony-wrap text-center">
+                  <div class="user-img mb-5" style="background-image: url(static/images/collection.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5">Data Acquisition is the process of populating the dataset with correct and important features. When acquiring the data, we need to have enough features populated to train the learning model correctly.<br><br><br><br></p>
+                    <p class="name">Data Acquisition</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center">
+                  <div class="user-img mb-5" style="background-image: url(static/images/collect.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5">Data Cleaning is a process used to determine inaccurate or incomplete data and then improve the quality through correcting detected errors. Data pre-processing is a technique which is used to transform the raw data in a useful and efficient format.<br><br><br></p>
+                    <p class="name">Data Cleaning and Pre-processing</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center">
+                  <div class="user-img mb-5" style="background-image: url(static/images/analysis.jfif)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5">It is an approach to analysing data sets to summarize their main characteristics, often with visual or graphical methods. The goal is to obtain confidence in data to a point where it is ready to engage a machine learning algorithm.<br><br><br><br></p>
+                    <p class="name">Exploratory Data Analysis</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center">
+                  <div class="user-img mb-5" style="background-image: url(static/images/engi.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5">It is the process of using domain knowledge of the data to create features that make machine learning algorithms work. Feature engineering is fundamental to the application of machine learning.<br><br><br><br><br></p>
+                    <p class="name">Feature Engineering</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center">
+                  <div class="user-img mb-5" style="background-image: url(static/images/split.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5">The whole database is split into two sets: the training set and the testing set. The 70% data is taken for training while remaining 30% data is used for testing.<br><br><br><br><br><br></p>
+                    <p class="name">Splitting of Dataset</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center">
+                  <div class="user-img mb-5" style="background-image: url(static/images/mod.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5">The process of modelling means training a machine learning algorithm to predict the labels from the features, tuning it for the business needs, and validating it on holdout data.<br><br><br><br><br></p>
+                    <p class="name">Modelling</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center">
+                  <div class="user-img mb-5" style="background-image: url(static/images/grid.jpg)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5">Cross-validation is a technique for evaluating ML models by training several ML models on subsets of the available input data and evaluating them on the complementary subset of the data. Grid search is an approach to hyperparameter tuning that will methodically build and evaluate a model for each combination of algorithm parameters specified in a grid.</p>
+                    <p class="name">Cross Validation and Grid Search</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center">
+                  <div class="user-img mb-5" style="background-image: url(static/images/train.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5">Training the best fit ML model involves providing a learning algorithm with training data to learn from. The training data must contain the correct answer, which is known as a target or target attribute. The learning algorithm finds patterns in the training data that map the input data attributes to the target, and it outputs an ML model that captures these patterns.</p>
+                    <p class="name">Training</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center">
+                  <div class="user-img mb-5" style="background-image: url(static/images/test.png)">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text">
+                    <p class="mb-5">Employing new data points to the trained algorithm and predicting the output results. A test dataset is a dataset that is independent of the training dataset, but that follows the same probability distribution as the training dataset. If a model fit to the training dataset also fits the test dataset well, minimal overfitting has taken place.</p>
+                    <p class="name">Testing</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(static/images/bg_5.jpg);">
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">HealthDiagnosis</h2>
+              <p>Healing is a matter of time, but it is sometimes also a matter of opportunity.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Site Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{{ url_for('index') }}" class="py-2 d-block">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="py-2 d-block">About</a></li>
+                <li><a href="{{ url_for('departments') }}" class="py-2 d-block">Departments</a></li>
+                <li><a href="{{ url_for('chart') }}" class="py-2 d-block">Analytics</a></li>
+                <li><a href="{{ url_for('contact') }}" class="py-2 d-block">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info.HealthDiagnosis.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | HealthDiagnosis <i class="icon-heart" aria-hidden="true"></i>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <script src="static/js/jquery.waypoints.min.js"></script>
+  <script src="static/js/jquery.stellar.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+  <script src="static/js/jquery.magnific-popup.min.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="static/js/jquery.animateNumber.min.js"></script>
+  <script src="static/js/bootstrap-datepicker.js"></script>
+  <script src="static/js/jquery.timepicker.min.js"></script>
+  <script src="static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="static/js/google-map.js"></script>
+  <script src="static/js/main.js"></script>
+    
+    {% endblock %}
+  </body>
+</html>
