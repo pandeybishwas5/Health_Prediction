@@ -3,11 +3,11 @@ from flask import Flask, request, jsonify, render_template, session, redirect, u
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
-diab = pickle.load(open('diab.pkl', 'rb'))
-heartmodel = pickle.load(open('heartmodel.pkl', 'rb'))
+model = pickle.load(open('model/rfc_model_diabetes.pkl', 'rb'))
+diab = pickle.load(open('model/diabetes.pkl', 'rb'))
+heartmodel = pickle.load(open('models/heartmodel.pkl', 'rb'))
 livermodel = pickle.load(open('livermodel.pkl', 'rb'))
-breastmodel = pickle.load(open('breastmodel.pkl', 'rb'))
+breastmodel = pickle.load(open('models/breastmodel.pkl', 'rb'))
 
 @app.route('/index')
 def index():
@@ -208,9 +208,8 @@ def predict_apibreast():
 
     output = prediction[0]
     return jsonify(output)
-if __name__ == "__main__":
-    app.run(debug=True)
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+

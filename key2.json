@@ -1,6 +1,5 @@
 @app.route('/index')
 @app.route('/about')
-
 @app.route('/predictionSystem'
 @app.route('/contact')
 @app.route('/diabetes')
