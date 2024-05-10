@@ -3,10 +3,10 @@ from flask import Flask, request, jsonify, render_template, session, redirect, u
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('model/rfc_model_diabetes.pkl', 'rb'))
-diab = pickle.load(open('model/diabetes.pkl', 'rb'))
+model = pickle.load(open('models/rfc_model_diabetes.pkl', 'rb'))
+diab = pickle.load(open('models/diabetes.pkl', 'rb'))
 heartmodel = pickle.load(open('models/heartmodel.pkl', 'rb'))
-livermodel = pickle.load(open('livermodel.pkl', 'rb'))
+livermodel = pickle.load(open('models/livermodel.pkl', 'rb'))
 breastmodel = pickle.load(open('models/breastmodel.pkl', 'rb'))
 
 @app.route('/index')
