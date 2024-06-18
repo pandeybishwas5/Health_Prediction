@@ -278,73 +278,56 @@ input[type=password].form-control.invalid + label:after,
 <!-- End Main Top -->
    
 <div class="container1" >
-  <center><h2>SIGNUP</h2>
-   <img alt= "image" src= "static/images/login.png" height="40px" width="40px"> <span class="icon mb-3 d-block"></span>
-        {% if msg %}
-            <p style="color:red">{{ msg }}</p>
-        {% endif %}
-        <form action="/signupOrg" method="post" >
-        
-            <table cellpadding="5">
-                <col width="40%">
-                          <col width="75%">
-                <tr>
-                    <div id="personal-field">
-                    <td><label for="orgname">Organization&nbspName
-                    </label></td>
-                    <td><input type="text"  name="orgname" placeholder="Organization Name"  id="orgname" class="demoInputBox" required><br>    
-                    <span id="name-error" class="signup-error"></span>
-                    <span id="name-error" class="signup-error"></span>
-                    </td>
-                    </div>
-                </tr>
-                <div id="password-field">
-                <tr>
-                    <td>
-                    <label for="password">Password</label></td>
+    <center>
+            <h2>SIGNUP</h2>
+            <img alt="image" src="static/images/login.png" height="40px" width="40px">
+            <form action="/signupOrg" method="post">
+                <table cellpadding="5">
+                    <tr>
+                        <td><label for="orgname">Organization Name</label></td>
                         <td>
-                        <input type="password"  name="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password"  id="password" class="form-control validate" required>
-                        <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                    <br>                       
-                    <span id="password-error" class="signup-error"></span>
-                    </td>        
-                </tr>
-                <tr>
-                    
-                    <td><label for="cpassword">Confirm Password
-                    </label></td>
-                    <td><input type="password"  name="password_two" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm Password" id="password_two" class="demoInputBox">
-                    <br><span id="confirm-password-error" class="signup-error"></span>
-                    </td>
-                </tr>
+                            <input type="text" name="orgname" placeholder="Organization Name" id="orgname" class="demoInputBox" required><br>
+                            <span id="name-error" class="signup-error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password</label></td>
+                        <td>
+                            <input type="password" name="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" id="password" class="form-control validate" required>
+                            <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            <br>
+                            <span id="password-error" class="signup-error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="password_two">Confirm Password</label></td>
+                        <td>
+                            <input type="password" name="password_two" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm Password" id="password_two" class="demoInputBox" required>
+                            <br>
+                            <span id="confirm-password-error" class="signup-error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email Id</label></td>
+                        <td>
+                            <input type="email" name="email" placeholder="Email Id" id="email" class="demoInputBox" required><br>
+                            <span id="email-error" class="signup-error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="mobile">Mobile Number</label></td>
+                        <td>
+                            <input type="tel" name="mobile" placeholder="Mobile Number" id="mobile" class="demoInputBox" required><br>
+                            <span id="phone-error" class="signup-error"></span>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <input type="submit" value="Signup" class="btn btn-primary" name="submit">
                 </div>
-                
-                <tr>
-                    <div id="email-field">
-                    <td><label for="email">Email Id</label></td>
-                    <td><input type="email" name="email" placeholder="Email Id" id="email" class="demoInputBox" required><br>
-                    <span id="email-error1" class="signup-error"></span>
-                    <span id="email-error" class="signup-error"></span>
-                    </td>
-                    </div>
-                </tr>
-                
-                <tr>
-                    <div id="contact-field">
-                    <td><label for="mobile">Mobile Number</label></td>
-                    <td><input type="text" name="mobile" placeholder="Mobile Number" id="mobile" class="demoInputBox" required><br>
-                    <span id="phone-error1" class="signup-error"></span>
-                    <span id="phone-error" class="signup-error"></span>
-                    </td>
-                    </div>
-                </tr>
-            </table>
-             <div class="form-group">
-                <input type="submit" value="Signup" class="btn btn-primary" name="submit">
-              </div>
-    &nbsp &nbsp
-    Already have an Account? &nbsp &nbsp <a href="/loginOrg">Login</a>
-    </form></center>
+            </form>
+            <p>Already have an Account? <a href="/loginOrg">Login</a></p>
+        </center>
   </div>
 </div>
 <script>

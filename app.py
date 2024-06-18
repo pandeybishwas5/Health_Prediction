@@ -1,22 +1,48 @@
 import numpy as np
-from flask import Flask, request, jsonify, render_template, session, redirect, url_for
+from flask import Flask, flash, request, jsonify, render_template, session, redirect, url_for
 import pickle
+from flask_sqlalchemy import SQLAlchemy
+import secrets
+from flask_bcrypt import Bcrypt
+from flask_migrate import Migrate
 
 app = Flask(__name__)
+
+# Generate and set the secret key
+app.secret_key = secrets.token_hex(16)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:biswas123@localhost:5432/healthPrediction'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+# Load models
 model = pickle.load(open('models/rfc_model_diabetes.pkl', 'rb'))
 diab = pickle.load(open('models/diabetes.pkl', 'rb'))
 heartmodel = pickle.load(open('models/heartmodel.pkl', 'rb'))
 livermodel = pickle.load(open('models/livermodel.pkl', 'rb'))
 breastmodel = pickle.load(open('models/breastmodel.pkl', 'rb'))
 
+
+bcrypt = Bcrypt(app)
+# Define User model
+class User(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), unique=True, nullable=False)
+
+
+# Define routes
 @app.route('/index')
 def index():
-    
     return render_template('index.html')
 
 @app.route('/about')
 def about():
     return render_template('about.html')
+
 
 @app.route('/predictionSystem')
 def predictionSystem():
@@ -24,7 +50,7 @@ def predictionSystem():
 
 @app.route('/contact')
 def contact():
-        return render_template('contact.html')
+    return render_template('contact.html')
 
 @app.route('/diabetes')
 def diabetes():
@@ -42,11 +68,9 @@ def heart():
 def breast():
     return render_template('breast.html')
 
-
 @app.route('/departments')
 def departments():
     return render_template('departments.html')
-
 
 @app.route('/chart')
 def chart():
@@ -68,13 +92,51 @@ def liverAnalytics():
 def breastAnalytics():
     return render_template('breastAnalytics.html')
 
-@app.route('/loginOrg')
+@app.route('/loginOrg', methods=['GET', 'POST'])
 def loginOrg():
-    return render_template('loginOrg.html')
+    if request.method == 'POST':
+        username = request.form['orgname']
+        password = request.form['password']
+        
+        # Query user by username
+        user = User.query.filter_by(username=username, password=password).first()
 
-@app.route('/signupOrg')
+        if user:
+            session['orgname'] = user.username
+            flash('Login successful!', 'success')
+            return redirect(url_for('predictionSystem'))  # Redirect to dashboard or any other page after login
+        else:
+            flash('Invalid username or password', 'error')
+            return redirect(url_for('loginOrg'))  # Redirect back to the sign-in page if login fails
+    else:
+        return render_template('loginOrg.html')
+
+@app.route('/signupOrg', methods=['GET', 'POST'])
 def signupOrg():
-    return render_template('signupOrg.html')
+    if request.method == 'POST':
+        username = request.form['orgname']
+        password = request.form['password']
+        email = request.form['email']
+        
+        
+        # Check if the user already exists
+        user = User.query.filter_by(username=username).first()
+        existing_user = User.query.filter_by(email=email).first()
+        if user:
+            flash('Username already exists', 'error')
+            return redirect(url_for('signupOrg'))
+        
+        if existing_user:
+            flash('Email address already in use. Please choose a different email.', 'error')
+            return redirect(url_for('signupOrg'))
+
+        new_user = User(username=username, password=password, email=email)
+        db.session.add(new_user)
+        db.session.commit()
+        flash('Sign up successful!', 'success')
+        return redirect(url_for('loginOrg'))
+    else:
+        return render_template('signupOrg.html')
 
 @app.route('/')
 def BeforeLoginHome():
@@ -93,123 +155,84 @@ def Logout():
     session.pop('loggedin', None)
     session.pop('orgid', None)
     session.pop('orgname', None)
-    return render_template('loginOrg.html')
+    flash('You have been logged out.', 'success')
+    return redirect(url_for('loginOrg'))
 
-
-
-#DIABETES
-@app.route('/predict',methods=['POST'])
+# DIABETES
+@app.route('/predict', methods=['POST'])
 def predict():
-    '''
-    For rendering results on HTML GUI
-    '''
     int_features = [x for x in request.form.values()]
     final_features = [np.array(int_features)]
     prediction = diab.predict(final_features)
-    output = int(round(prediction[0],2))
-    if(output==0):
+    output = int(round(prediction[0], 2))
+    if output == 0:
         return render_template('diabetesResult-.html', prediction_text='The individual does not show the probability of having diabetes ( {} ) with 80.0347 % accuracy.'.format(output))
     else:
         return render_template('diabetesResult+.html', prediction_text='The individual shows the probability of having diabetes ( {} ) with 80.0347 % accuracy.'.format(output))
-    
-    
-    
-@app.route('/predict_api',methods=['POST'])
+
+@app.route('/predict_api', methods=['POST'])
 def predict_api():
-    '''
-    For direct API calls trought request
-    '''
     data = request.get_json(force=True)
     prediction = diab.predict([np.array(list(data.values()))])
-
     output = prediction[0]
     return jsonify(output)
 
-
-#HEART
-@app.route('/predictheart',methods=['POST'])
+# HEART
+@app.route('/predictheart', methods=['POST'])
 def predictheart():
-    '''
-    For rendering results on HTML GUI
-    '''
     int_features = [x for x in request.form.values()]
     final_features = [np.array(int_features)]
     prediction = heartmodel.predict(final_features)
-
-    output = int(round(prediction[0],2))
-    if(output==0):
-        return render_template('heartResult-.html', prediction_text='The individual does not show the probability of having heart disease ( {} ) with 83.007 % accuracy..'.format(output))
+    output = int(round(prediction[0], 2))
+    if output == 0:
+        return render_template('heartResult-.html', prediction_text='The individual does not show the probability of having heart disease ( {} ) with 83.007 % accuracy.'.format(output))
     else:
         return render_template('heartResult+.html', prediction_text='The individual shows the probability of having heart disease ( {} ) with 83.007 % accuracy.'.format(output))
 
-@app.route('/predict_apiheart',methods=['POST'])
+@app.route('/predict_apiheart', methods=['POST'])
 def predict_apiheart():
-    '''
-    For direct API calls trought request
-    '''
     data = request.get_json(force=True)
     prediction = heartmodel.predict([np.array(list(data.values()))])
-
     output = prediction[0]
     return jsonify(output)
 
-#LIVER
-@app.route('/predictliver',methods=['POST'])
+# LIVER
+@app.route('/predictliver', methods=['POST'])
 def predictliver():
-    '''
-    For rendering results on HTML GUI
-    '''
     int_features = [x for x in request.form.values()]
     final_features = [np.array(int_features)]
     prediction = livermodel.predict(final_features)
-
-    output = int(round(prediction[0],2))
-    if(output==0):
+    output = int(round(prediction[0], 2))
+    if output == 0:
         return render_template('liverResult-.html', prediction_text='The individual does not show the probability of having liver disease ( {} ) with 71.026 % accuracy.'.format(output))
     else:
         return render_template('liverResult+.html', prediction_text='The individual shows the probability of having liver disease ( {} ) with 71.026 % accuracy.'.format(output))
 
-@app.route('/predict_apiliver',methods=['POST'])
+@app.route('/predict_apiliver', methods=['POST'])
 def predict_apiliver():
-    '''
-    For direct API calls trought request
-    '''
     data = request.get_json(force=True)
     prediction = livermodel.predict([np.array(list(data.values()))])
-
     output = prediction[0]
     return jsonify(output)
 
-
-
-#BREAST
-@app.route('/predictbreast',methods=['POST'])
+# BREAST
+@app.route('/predictbreast', methods=['POST'])
 def predictbreast():
-    '''
-    For rendering results on HTML GUI
-    '''
     int_features = [x for x in request.form.values()]
     final_features = [np.array(int_features)]
     prediction = breastmodel.predict(final_features)
-#  benign = 0, malignant = 1
-    output = int(round(prediction[0],2))
-    if(output==0):
+    output = int(round(prediction[0], 2))
+    if output == 0:
         return render_template('breastResult+.html', prediction_text='The individual has Benign Cancer ( {} ) with 91.01 % accuracy.'.format(output))
     else:
         return render_template('breastResult-.html', prediction_text='The individual has Malignant Cancer ( {} ) with 91.01 % accuracy.'.format(output))
 
-@app.route('/predict_apibreast',methods=['POST'])
+@app.route('/predict_apibreast', methods=['POST'])
 def predict_apibreast():
-    '''
-    For direct API calls trought request
-    '''
     data = request.get_json(force=True)
     prediction = breastmodel.predict([np.array(list(data.values()))])
-
     output = prediction[0]
     return jsonify(output)
 
-
 if __name__ == "__main__":
     app.run(debug=True)
-

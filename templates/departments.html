@@ -20,11 +20,11 @@
 			<div class="inner">
 				<img src="static/images/image-1.png" alt="" class="image-1">
 					
-				<form action="{{url_for('departments')}}" method="post">
+				<form action="{{url_for('loginOrg')}}" method="POST">
 					<h3>MEMBER LOGIN</h3>
 					<div class="form-holder">
 						<span class="lnr lnr-user"></span>
-						<input type="text" class="form-control" placeholder="User Id" name="userid" required>
+						<input type="text" class="form-control" placeholder="User Id" name="orgname" required>
 					</div>
 					<div class="form-holder">
 						<span class="lnr lnr-lock"></span>
@@ -37,7 +37,7 @@
 					</div>
 					<center>
 					 &nbsp &nbsp
-    Don't have an Account? &nbsp &nbsp <a href="/departmentSignUp">Signup</a></center>
+    Don't have an Account? &nbsp &nbsp <a href="/signupOrg">Signup</a></center>
 				</form>
 				<img src="static/images/image-2.png" alt="" class="image-2">
 			</div>
